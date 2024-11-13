@@ -1,0 +1,38 @@
+Geometry = VaspFormat {
+  <<< "go.vasp"
+}
+
+Hamiltonian = xTB {
+  MaxSCCIterations = 3000
+  Method = "GFN2-xTB"
+  KPointsAndWeights = SuperCellFolding {
+    6 0 0
+    0 6 0
+    0 0 1
+    0.5 0.5 0.0
+  }
+}
+
+Analysis {
+  CalculateForces = Yes
+  ProjectStates {
+    Region {
+      Atoms = C
+      ShellResolved = Yes
+      Label = "pdos.C"
+      OrbitalResolved = Yes
+}
+    Region {
+      Atoms = H
+      ShellResolved = Yes
+      Label = "pdos.H"
+      OrbitalResolved = Yes
+}
+    Region {
+      Atoms = O
+      ShellResolved = Yes
+      Label = "pdos.O"
+      OrbitalResolved = Yes
+}
+}
+}
