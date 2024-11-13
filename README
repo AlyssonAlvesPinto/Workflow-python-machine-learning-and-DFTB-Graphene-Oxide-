@@ -1,0 +1,22 @@
+Graphene Oxide and Reduced Graphene Oxide Workflow
+
+This project is designed to calculate electronic and structural properties of graphene oxide (GO) and reduced graphene oxide (rGO) using a structured Python workflow.
+Workflow Overview
+
+    1_create_modify.py - Creates folders and copies all necessary files to each directory.
+
+        Note: The script used to generate the structures (GOBruno.py) is authored by Bruno Focassio, and can be found at Bruno's GitHub Repository - https://github.com/bfocassio/graphene-oxide.
+
+    2_machine_learning.py - Uses pre-trained MACE-OFF models (MACE-OFF GitHub Repository - https://github.com/ACEsuit/mace-off) to relax the GO/rGO structures efficiently through machine learning-based optimization.
+
+    3_analyze_structure.py - Analyzes the relaxed structures to identify and remove any detached molecules or atoms from the main structure.
+
+    4_run_DFTB+.py - Executes DFTB+ calculations on the GO/rGO structures to obtain electronic properties.
+
+    5_analyze_structure.py - Analyzes the structures post-DFTB+ calculation to identify and remove any detached molecules or atoms (if any remain after the relaxation step).
+
+    6_plot_data.py - Processes the results to generate PDOS (Projected Density of States) plots, with atomic separation for detailed analysis.
+
+Additional Information
+
+This workflow enables a systematic approach to GO and rGO electronic property calculations, integrating machine learning for structure relaxation, and offering reliable DFTB+ calculations and data visualization for PDOS analysis.
